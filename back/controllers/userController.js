@@ -114,11 +114,11 @@ Router.get("/InfoUser/:id", (req, res) => {
 
     const sql = `
     SELECT U.Nom, U.Prenom, U.Date_de_naissance, U.Telephone, U.Adresse_Mail AS "Email", S.NomService AS "Service", F.Nom_Fonction AS "Fonction", E.NomComerciale AS "Entreprise"
-    FROM Utilisateur U 
+    FROM utilisateurq U 
     LEFT JOIN Service S ON U.ID_Utilisateur = S.id_service 
     LEFT JOIN Fonction F ON U.ID_Utilisateur = F.id_fonction
     LEFT JOIN Entreprise E ON U.ID_Utilisateur = E.ID_entreprise
-    WHERE U.ID_Utilisateur = ?;
+    WHERE U.Id_Utilisateur = ?;
     `;
 
     db.query(sql, [userId], (err, rows) => {
