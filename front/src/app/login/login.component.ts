@@ -36,24 +36,43 @@ export class LoginComponent implements OnInit {
     };
   }
 
+  // onSubmitForm() {
+  //   this.errorMessage = [];
+  //   if (this.loginForm.valid) {
+  //     const data = this.getFormData(this.loginForm.value);
+  //     this.httpClient.post('http://localhost:5000/api/user/check-credentials', data).subscribe(
+  //     (response: any) => {
+  //       console.log('Réponse de l\'API :', response);
+  //       this.tokenService.decodeToken(response.token);
+  //       this.route.navigate(['menu']);
+  //     },
+  //     (error) => {
+  //       console.error('Erreur de la requête API :', error);
+  //     }
+  //     );
+  //   } else {
+  //     this.getFormErrors(this.loginForm);
+  //   }
+  // }
+
+  // On redirige en attendant meli fini back 
   onSubmitForm() {
+    // Réinitialiser les messages d'erreur
     this.errorMessage = [];
+
+    // Vérifier si le formulaire est valide
     if (this.loginForm.valid) {
-      const data = this.getFormData(this.loginForm.value);
-      this.httpClient.post('https://safeproethics.fr/api/user/check-credentials', data).subscribe(
-      (response: any) => {
-        console.log('Réponse de l\'API :', response);
-        this.tokenService.decodeToken(response.token);
+        // Récupérer les données du formulaire (optionnel si non nécessaire)
+        const data = this.getFormData(this.loginForm.value);
+
+        // Rediriger vers la page 'menu'
         this.route.navigate(['menu']);
-      },
-      (error) => {
-        console.error('Erreur de la requête API :', error);
-      }
-      );
     } else {
-      this.getFormErrors(this.loginForm);
+        // Gérer les erreurs du formulaire si invalide
+        this.getFormErrors(this.loginForm);
     }
-  }
+}
+
 
   getFormErrors(form: FormGroup) {
     for (const controlName in form.controls) {
