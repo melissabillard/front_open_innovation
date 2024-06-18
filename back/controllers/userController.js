@@ -26,6 +26,11 @@ Router.post('/register', (req, res) => {
             console.error('Error hashing the password:', err);
             return res.status(500).json({ error: 'An error occurred while hashing the password' });
         }
+
+        res.status(200).json({
+            message: 'User registered successfully',
+            hashedPassword: hashedPassword 
+        });
     });
 });
 
@@ -48,6 +53,7 @@ Router.post("/check-credentials", (req, res) => {
         } else {
             if (rows.length > 0) {
                 const storedHashedPassword = rows[0].Mot_de_passe;
+
                 const { Id_Utilisateur, Role } = rows[0];
 
                 bcrypt.compare(password, storedHashedPassword, (err, result) => {
