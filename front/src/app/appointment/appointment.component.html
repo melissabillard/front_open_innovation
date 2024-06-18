@@ -1,0 +1,69 @@
+<app-navbar>
+    <div class="container">
+        <mat-stepper linear #stepper (selectionChange)="onStepChange($event)">
+            <mat-step>
+                <div>
+                    <ng-template matStepLabel>Choisissez la personne</ng-template>
+                    <div class="appointment">
+                        <div>
+                            <div class="card-container">
+                                <div *ngFor="let data of datas">
+                                    <mat-card class="card">
+                                        <img src="../../assets/image/logo.png" alt="">
+                                        <div class="title">
+                                            <b> {{data.prenom}} <span>{{ data.nom | uppercase }}</span></b>
+                                            <div>{{data.fonction}}</div>
+                                        </div>
+                                        <button mat-raised-button matStepperNext color="primary"
+                                            (click)="getPersonChoosen(data.id)">Prendre
+                                            rendez-vous</button>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-step>
+            <mat-step [stepControl]="dispoFormGroup" [completed]="dispoFormGroup.valid">
+                <form [formGroup]="dispoFormGroup" class="disponibilities">
+                    <ng-template matStepLabel>Proposez votre disponibilité</ng-template>
+                    <mat-card>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Date du rendez-vous</mat-label>
+                            <input matInput [matDatepicker]="rdvDate" formControlName="rdvDate">
+                            <mat-datepicker-toggle matSuffix [for]="rdvDate">
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #rdvDate></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Lieu du rendez-vous</mat-label>
+                            <mat-select formControlName="placeRdv">
+                                <mat-option value="option1">Sur place</mat-option>
+                                <mat-option value="option2">Visio</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Commentaire</mat-label>
+                            <textarea matInput formControlName="comment"></textarea>
+                        </mat-form-field>
+
+                        <button mat-raised-button color="primary" matStepperNext (click)="onClickConfirmAppointment()"
+                            class="validateButton">Valider</button>
+
+                    </mat-card>
+                </form>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Confirmation</ng-template>
+                <p class="confirmation" style="text-align: center;">Votre demande de rendez-vous à bien été prise en compte. Madame, Monsieur Test
+                    prendra
+                    rapidement contact
+                    avec vous par mail.</p>
+            </mat-step>
+        </mat-stepper>
+
+    </div>
+</app-navbar>

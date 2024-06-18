@@ -1,0 +1,17 @@
+<app-navbar>
+<div *ngIf="!quizComplete && currentQuestionIndex < questions.length" id="ethicQuiz">
+    <h2 class="question-title">{{ questions[currentQuestionIndex].questionText }}</h2>
+    <ul class="answers-list">
+      <li *ngFor="let answer of questions[currentQuestionIndex].answers; let i = index">
+        <button (click)="selectAnswer(i)" [ngClass]="'red-answer'">{{ answer.answerText }}</button>
+      </li>
+    </ul>
+</div>
+<div *ngIf="quizComplete" class="quiz-complete-message">
+  <img class="head-logo" src="../../assets/image/logo.png" alt="">
+  <p class="quiz-result">Quiz terminé. Votre score final est : {{ score }}</p>
+  <p class="ask-formation">Vous pouvez tenter d'augmenter vos points en essayant les formations ci-dessous</p>
+  <button routerLink="/formation" class="see-formation">Voir les formations</button>
+</div>
+
+  

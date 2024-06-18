@@ -1,0 +1,28 @@
+# Fichiers de configuration
+node_modules/
+npm-debug.log
+.pnp
+.pnp.js
+.env
+
+# Fichiers de build
+dist/
+build/
+out/
+
+# Fichiers système et cachés (par exemple, .DS_Store sur macOS)
+.DS_Store
+Thumbs.db
+
+# Dossiers de gestion de projet spécifiques
+.idea/
+.vscode/
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*

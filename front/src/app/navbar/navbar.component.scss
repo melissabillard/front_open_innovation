@@ -1,0 +1,66 @@
+.sidenav-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+
+    ::ng-deep {
+        .mdc-list-item__primary-text {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            color: white !important;
+        }
+    }
+
+    .sidenav {
+        display: flex;
+        flex-direction: column;
+        background-color: #1565c0;
+        width: 15vw;
+
+
+        .logo {
+            height: 15vh;
+            display: flex;
+            justify-content: center;
+
+
+            a {
+                img {
+                    margin: 1em 0;
+                    width: 100%;
+                    height: 80%;
+                }
+
+            }
+
+        }
+
+        .container-item {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .subMenu {
+                margin-left: 2em;
+            }
+
+            .List-item-active {
+                border-left: white 4px solid;
+
+            }
+
+            .mat-icon {
+                margin-right: 20px;
+            }
+
+        }
+    }
+
+    .main-content {
+        width: 83vw;
+        height: 95vh;
+        margin-top: 1em;
+    }
+}

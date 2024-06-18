@@ -1,0 +1,105 @@
+@use '@angular/material' as mat;
+
+.title {
+    @include mat.elevation(5);
+    border-radius: 5px;
+    background-color: #64b5f6;
+    margin: 1em auto;
+    width: 80vw;
+    height: 10vh;
+    font-size: 25px;
+    text-align: center;
+
+    span {
+        // color: #1565c0;
+        font-weight: bold;
+    }
+}
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    width: 80vw;
+    margin: auto;
+
+    .row1 {
+
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 2em;
+
+        .appointment {
+            height: 30vh;
+            flex: 1;
+            background-color: #f14624;
+            margin-right: 10px;
+            @include mat.elevation(5);
+        }
+
+        .game {
+            background-color: #85c536;
+            height: 30vh;
+            flex: 1;
+            @include mat.elevation(5);
+            justify-content: center;
+            align-items: center;
+
+            mat-card-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+
+                span {
+
+                    font-size: 70px;
+                    font-weight: bold;
+                    align-self: center;
+                }
+            }
+        }
+
+        .informations {
+            background-color: #981980;
+            height: 30vh;
+            flex: 1;
+            margin-right: 10px;
+            @include mat.elevation(5);
+
+            mat-card-content {
+                display: flex;
+                height: 100%;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+
+                img {
+                    width: 30%;
+                    height: 50%;
+                }
+
+                // .btn-action {
+                //     margin: 20px 0 25px 0;
+                //     width: 50%;
+                // }
+            }
+        }
+
+    }
+
+    .formations {
+        width: 80vw;
+        margin: auto;
+
+        .mat-elevation-z8 {
+            box-shadow: none;
+        }
+
+        mat-card-title {
+            margin-bottom: 1em;
+        }
+    }
+
+}

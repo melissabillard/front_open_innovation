@@ -1,0 +1,33 @@
+@use '@angular/material' as mat;
+
+.container {
+    // width: 80vw;
+    margin: auto;
+
+    .card-container {
+        padding: 1em;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 1em;
+        grid-row-gap: 2em;
+
+        .card {
+            @include mat.elevation(5);
+
+            img {
+                width: 100px;
+                height: 50px;
+            }
+
+            .action-button {
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+}

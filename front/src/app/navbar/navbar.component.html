@@ -1,0 +1,52 @@
+<div>
+    <mat-sidenav-container class="sidenav-container">
+
+        <mat-sidenav #drawer class="sidenav" fixedToGap="64" [attr.role]=" 'dialog'" [mode]="'side'" [opened]="true">
+            <div class="logo">
+                <a routerLink="/menu">
+                    <img src="../../../assets/image/logo_epsi.png" alt="">
+                </a>
+
+            </div>
+
+            <div class="container-item">
+                <mat-nav-list>
+                    <a mat-list-item routerLinkActive="List-item-active" (click)="displaySubMenu()">
+                        <mat-icon matListIcon>question_mark</mat-icon>
+                        <span>S'informer</span>
+                    </a>
+                    <mat-nav-list *ngIf="openSubMenu" class="subMenu">
+                        <a mat-list-item routerLink="/formation">
+                            <mat-icon matListIcon>school</mat-icon>
+                            <span>Formation</span>
+                        </a>
+                        <a mat-list-item routerLink="/game">
+                            <mat-icon matListIcon>sports_esports</mat-icon>
+                            <span>Test Ethique</span>
+                        </a>
+                    </mat-nav-list>
+                    <a mat-list-item routerLink="/declare" routerLinkActive="List-item-active">
+                        <mat-icon matListIcon>feed</mat-icon>
+                        <span>Déclarer</span>
+                    </a>
+                    <a mat-list-item routerLink="/appointment" routerLinkActive="List-item-active">
+                        <mat-icon matListIcon>calendar_month</mat-icon>
+                        <span>Rendez-vous</span>
+                    </a>
+                </mat-nav-list>
+                <mat-nav-list class="logout">
+                    <a routerLink="/login" mat-list-item>
+                        <mat-icon matListIcon>logout</mat-icon>
+                        Se déconnecter
+                    </a>
+                </mat-nav-list>
+            </div>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <div class="main-content">
+                <ng-content></ng-content>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

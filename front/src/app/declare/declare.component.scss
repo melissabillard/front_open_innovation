@@ -1,0 +1,65 @@
+@use '@angular/material' as mat;
+
+#declareEvent {
+  padding: 1em;
+  width: 50vw;
+  // background-color: #5B8FBE;
+  display: flex;
+  flex-direction: column;
+  /* Pour aligner les éléments en colonne */
+  align-items: center;
+  margin: auto;
+  border-radius: 10px;
+
+  .title {
+    font-size: 35px;
+    margin-bottom: 1em;
+
+  }
+}
+
+/* Style du titre de la page */
+.page-title {
+  color: #000;
+  font-family: Poppins;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.form-container {
+  @include mat.elevation(5);
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Pour aligner le formulaire au centre */
+  form {
+    width: 100%;
+  }
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-form-field,
+mat-slide-toggle,
+mat-checkbox,
+button {
+  color: #000;
+  /* Noir */
+}

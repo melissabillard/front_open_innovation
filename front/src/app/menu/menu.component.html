@@ -1,0 +1,88 @@
+<app-navbar>
+    <div class="title" style="display: flex; align-items: center; justify-content: center;">
+        <div>
+            Bienvenue, <span>Romain Roch</span>!
+        </div>
+    </div>
+    <div class="container">
+        <div class="row1">
+            <mat-card class="informations">
+                <mat-card-content>
+                    <div style="font-weight: 500;">Nouvelle formation disponible</div>
+                    <img src="../../assets/image/formation_2.png" alt="">
+                    <button mat-raised-button class="btn-action"
+                        routerLink="https://www.m2iformation.fr/formation-lutter-efficacement-contre-le-harcelement-moral-et-sexuel/RH-HARC/">En
+                        savoir plus</button>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class="appointment">
+                <mat-card-content style="font-weight: 500;">
+                    Vos rendez-vous :
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>calendar_month</mat-icon>
+                        <div matListItemTitle>Rendez vous avec Madame Foch</div>
+                        <div matListItemLine>Le 27/10/2023</div>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <mat-icon matListItemIcon>calendar_month</mat-icon>
+                        <div matListItemTitle>Rendez vous avec Madame Foch</div>
+                        <div matListItemLine>Le 28/10/2023</div>
+                    </mat-list-item>
+
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class="game">
+                <mat-card-content>
+                    <div style="font-weight: 500;">Votre score au Test d'Ethique est </div>
+                    <span>60</span>
+                    <button mat-raised-button class="btn-action" routerLink="/game">Faire le test</button>
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+
+        <mat-card class="formations">
+            <mat-card-title>Les prochaines dates de formations de votre entreprise</mat-card-title>
+            <mat-card-content>
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    <ng-container matColumnDef="Nom">
+                        <th mat-header-cell *matHeaderCellDef> Nom </th>
+                        <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="Date de début">
+                        <th mat-header-cell *matHeaderCellDef> Date de début </th>
+                        <td mat-cell *matCellDef="let element"> {{element.debutDate}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="Durée">
+                        <th mat-header-cell *matHeaderCellDef> Durée </th>
+                        <td mat-cell *matCellDef="let element"> {{element.duree}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Format">
+                        <th mat-header-cell *matHeaderCellDef> Format </th>
+                        <td mat-cell *matCellDef="let element"> {{element.format}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Statut">
+                        <th mat-header-cell *matHeaderCellDef> Statut </th>
+                        <td mat-cell *matCellDef="let element">
+                            <mat-chip-option [style.background]="getBackgroundColor(element.status)">{{element.status}}
+                            </mat-chip-option>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </mat-card-content>
+
+        </mat-card>
+
+    </div>
+</app-navbar>
