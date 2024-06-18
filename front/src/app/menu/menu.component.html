@@ -8,10 +8,10 @@
         <div class="row1">
             <mat-card class="informations">
                 <mat-card-content>
-                    <div style="font-weight: 500;">Nouvelle formation disponible</div>
-                    <img src="../../assets/image/formation_2.png" alt="">
+                    <div style="font-weight: 500;">Aide aux bovins laitiers</div>
+                    <img src="../../assets/image/gouv.png" alt="">
                     <button mat-raised-button class="btn-action"
-                        routerLink="https://www.m2iformation.fr/formation-lutter-efficacement-contre-le-harcelement-moral-et-sexuel/RH-HARC/">En
+                        routerLink="https://www.telepac.agriculture.gouv.fr/telepac/pdf/taa/2022/ABL-2022_notice.pdf">En
                         savoir plus</button>
                 </mat-card-content>
             </mat-card>
@@ -35,16 +35,16 @@
 
             <mat-card class="game">
                 <mat-card-content>
-                    <div style="font-weight: 500;">Votre score au Test d'Ethique est </div>
+                    <div style="font-weight: 500;">Nombre de vaches sur la parcelle</div>
                     <span>60</span>
-                    <button mat-raised-button class="btn-action" routerLink="/game">Faire le test</button>
+                    <button mat-raised-button class="btn-action" routerLink="/video-surveillance">Voir en direct</button>
                 </mat-card-content>
             </mat-card>
 
         </div>
 
         <mat-card class="formations">
-            <mat-card-title>Les prochaines dates de formations de votre entreprise</mat-card-title>
+            <mat-card-title>Prochaines consultations vétérinaires</mat-card-title>
             <mat-card-content>
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
                     <ng-container matColumnDef="Nom">
@@ -54,7 +54,7 @@
 
 
                     <ng-container matColumnDef="Date de début">
-                        <th mat-header-cell *matHeaderCellDef> Date de début </th>
+                        <th mat-header-cell *matHeaderCellDef> Date</th>
                         <td mat-cell *matCellDef="let element"> {{element.debutDate}} </td>
                     </ng-container>
 
@@ -65,8 +65,8 @@
                     </ng-container>
 
                     <ng-container matColumnDef="Format">
-                        <th mat-header-cell *matHeaderCellDef> Format </th>
-                        <td mat-cell *matCellDef="let element"> {{element.format}} </td>
+                        <th mat-header-cell *matHeaderCellDef> Intitulé </th>
+                        <td mat-cell *matCellDef="let element"> {{element.intitule}} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="Statut">

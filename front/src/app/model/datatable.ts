@@ -2,15 +2,13 @@ export interface Formations {
     nom: string;
     debutDate: string;
     duree: string;
-    format: string;
+    intitule: string;
     status: string;
 }
 
 export const FORMATIONS: Formations[] = [
-    { nom: 'Formation 1', debutDate: '20/10/2023', duree: '2h', format: 'Présentiel', status: 'Cloturée' },
-    { nom: 'Formation 2', debutDate: '22/12/2023', duree: '2h', format: 'Distanciel', status: 'Ouverte' },
-    { nom: 'Formation 3', debutDate: '18/01/2024', duree: '1h', format: 'Présentiel', status: 'Cloturée' },
-    { nom: 'Formation 4', debutDate: '5/02/2024', duree: '1h30', format: 'Distanciel', status: 'Annulée' },
-
-
+    { nom: 'Vache - VL001', debutDate: '20/10/2024', duree: '2h', intitule: 'Consultation de suivi', status: 'En attente' },
+    { nom: 'Vache - HO789', debutDate: '22/12/2024', duree: '2h', intitule: 'Consultation préventive', status: 'Planifié' },
+    { nom: 'Vache - LH2024', debutDate: '26/06/2024', duree: '1h', intitule: 'Rappel vaccin brucellose', status: 'En cours' },
+    { nom: 'Vache - HO789', debutDate: '22/07/2024', duree: '2h', intitule: 'Consultation générale', status: 'Annulée' },
 ];

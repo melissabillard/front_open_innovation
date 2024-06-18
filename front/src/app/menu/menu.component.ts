@@ -13,14 +13,15 @@ export class MenuComponent {
   dataSource = FORMATIONS;
 
   getBackgroundColor(status: string) {
-    if (status === "Cloturée") {
+    if (status === "En cours") {
       return '#E39E21'
     }
-    else if (status === 'Ouverte') {
+    else if (status === 'Planifié') {
       return '#009D86'
     } else if (status === 'Annulée') {
       return '#D26C6F'
     }
+  
     else {
       return 'lightgrey'
     }
