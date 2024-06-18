@@ -8,7 +8,7 @@ const bcrypt = require('bcrypt');
 const { setToken } = require('../token.js');
 
 // PASSWORD UTILS
-// const { hashPassword } = require('../database/passwordUtils.js');
+const { hashPassword } = require('../database/passwordUtils.js');
 
 // Database config
 const configureDBConnection = require('../database/dbConfig');
@@ -17,17 +17,17 @@ const configureDBConnection = require('../database/dbConfig');
 const db = configureDBConnection();
 
 // Hachage Password
-// Router.post('/register', (req, res) => {
-//     const { email, password } = req.body;
+Router.post('/register', (req, res) => {
+    const { email, password } = req.body;
 
-//     // Utilisez la fonction de hachage pour hacher le mot de passe
-//     hashPassword(password, (err, hashedPassword) => {
-//         if (err) {
-//             console.error('Error hashing the password:', err);
-//             return res.status(500).json({ error: 'An error occurred while hashing the password' });
-//         }
-//     });
-// });
+    // Utilisez la fonction de hachage pour hacher le mot de passe
+    hashPassword(password, (err, hashedPassword) => {
+        if (err) {
+            console.error('Error hashing the password:', err);
+            return res.status(500).json({ error: 'An error occurred while hashing the password' });
+        }
+    });
+});
 
 // Define the POST route for checking if a user exists
 Router.post("/check-credentials", (req, res) => {
@@ -41,14 +41,14 @@ Router.post("/check-credentials", (req, res) => {
     }
 
     // Check if a user with the provided email exists
-    db.query('SELECT * FROM Utilisateur WHERE Adresse_Mail = ?', [email], (err, rows) => {
+    db.query('SELECT * FROM utilisateurs WHERE Email = ?', [email], (err, rows) => {
         if (err) {
             console.error('Error executing SQL query:', err);
             res.status(500).json({ error: 'An error occurred while checking for an existing user' });
         } else {
             if (rows.length > 0) {
                 const storedHashedPassword = rows[0].Mot_de_passe;
-                const { ID_Utilisateur, Role } = rows[0];
+                const { Id_Utilisateur, Role } = rows[0];
 
                 bcrypt.compare(password, storedHashedPassword, (err, result) => {
                     if (err) {
@@ -59,7 +59,7 @@ Router.post("/check-credentials", (req, res) => {
                         console.log('User credentials are correct');
 
                         // Generate a JWT token (if you are using JWT)
-                        const token = jwt.sign({ id: ID_Utilisateur, roles: Role }, 'secretkey277898145865');
+                        const token = jwt.sign({ id: Id_Utilisateur, roles: Role }, 'secretkey277898145865');
 
                         setToken(token); // Store the token
 
