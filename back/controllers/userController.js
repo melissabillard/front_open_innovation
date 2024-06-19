@@ -46,7 +46,7 @@ Router.post("/check-credentials", (req, res) => {
     }
 
     // Check if a user with the provided email exists
-    db.query('SELECT * FROM utilisateurs WHERE Email = ?', [email], (err, rows) => {
+    db.query('SELECT * FROM Utilisateurs WHERE Email = ?', [email], (err, rows) => {
         if (err) {
             console.error('Error executing SQL query:', err);
             res.status(500).json({ error: 'An error occurred while checking for an existing user' });

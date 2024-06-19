@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 9999;
 
 // Database config
 const configureDBConnection = require('./database/dbConfig');

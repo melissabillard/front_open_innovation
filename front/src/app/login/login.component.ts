@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     this.errorMessage = [];
     if (this.loginForm.valid) {
       const data = this.getFormData(this.loginForm.value);
-      this.httpClient.post('http://localhost:5000/api/user/check-credentials', data).subscribe(
+      this.httpClient.post('http://localhost:9999/api/user/check-credentials', data).subscribe(
       (response: any) => {
         console.log('Réponse de l\'API :', response);
         this.tokenService.decodeToken(response.token);

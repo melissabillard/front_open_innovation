@@ -1,0 +1,6 @@
+{
+    "email": "vache@agritech.com",
+    "password": "root"
+}
+
+  "hashedPassword": "$2b$10$mmvc3pdn30tzxvE2HaRFiulYL4pCQKwsHTBZMwT1Ixpc/Q7./tzey"
