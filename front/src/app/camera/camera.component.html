@@ -11,13 +11,13 @@
                 <div class="servo-wrapper">
                     <div>
                         <h2>Pan - S1</h2>
-                        <button mat-raised-button color="primary" onclick="updateServo(1, 'left')">Left</button>
-                        <button mat-raised-button color="primary" onclick="updateServo(1, 'right')">Right</button>
+                        <button mat-raised-button color="primary" (click)="updateServo(1, 'left')">Left</button>
+                        <button mat-raised-button color="primary" (click)="updateServo(1, 'right')">Right</button>
                     </div>
                     <div>
                         <h2>Tilt - S2</h2>
-                        <button mat-raised-button color="primary" onclick="updateServo(2, 'left')">Up</button>
-                        <button mat-raised-button color="primary" onclick="updateServo(2, 'right')">Down</button>
+                        <button mat-raised-button color="primary" (click)="updateServo(2, 'left')">Up</button>
+                        <button mat-raised-button color="primary" (click)="updateServo(2, 'right')">Down</button>
                     </div>
                 </div>
             </section>
