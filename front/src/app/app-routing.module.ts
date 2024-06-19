@@ -8,6 +8,7 @@ import { SubmenuComponent } from './submenu/submenu.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { FormationComponent } from './formation/formation.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { CameraComponent } from './camera/camera.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'submenu', component: SubmenuComponent },
   { path: 'formation', component: FormationComponent },
   { path: 'game', component: QuizComponent },
+  { path: 'camera', component: CameraComponent },
 ];
 
 

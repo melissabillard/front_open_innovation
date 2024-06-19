@@ -10,6 +10,7 @@ import { TokenService } from '../token.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private route: Router, private httpClient: HttpClient, private tokenService: TokenService) {}
