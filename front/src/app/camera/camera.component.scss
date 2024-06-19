@@ -3,4 +3,41 @@
 .container {
     display: flex;
     flex-direction: row;
+    text-align: center;
+
+    .inner-container{
+        background-color: #c2c0c2;
+        margin: auto;
+        width: 60vw;
+        height: 85vh;
+        overflow: auto;
+        @include mat.elevation(5);
+        border-radius: 5px;
+    }
+
+    .titre-camera{
+        font-size: 30px;
+        margin: 1em;
+    }
+
+    .cam-wrapper{
+        margin: 15em;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .servo-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 10px; 
+        margin-top: 20px;
+
+        button {
+            margin: 0 10px; 
+        }
+    }
 }

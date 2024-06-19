@@ -1,5 +1,26 @@
 <app-navbar>
     <div class="container">
-        <h1>Vidéo de surveillance</h1>
+        <div class="inner-container">
+            <h1 class="titre-camera">Vidéo de surveillance</h1>
+            <section>
+                <!-- Lien pour le stream de la video -->
+                <div class="cam-wrapper">
+                    <img src="http://192.168.0.26/stream" alt="Camera Stream">
+                </div>
+
+                <div class="servo-wrapper">
+                    <div>
+                        <h2>Pan - S1</h2>
+                        <button mat-raised-button color="primary" onclick="updateServo(1, 'left')">Left</button>
+                        <button mat-raised-button color="primary" onclick="updateServo(1, 'right')">Right</button>
+                    </div>
+                    <div>
+                        <h2>Tilt - S2</h2>
+                        <button mat-raised-button color="primary" onclick="updateServo(2, 'left')">Up</button>
+                        <button mat-raised-button color="primary" onclick="updateServo(2, 'right')">Down</button>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 </app-navbar>
