@@ -29,7 +29,7 @@ Router.post('/register', (req, res) => {
 
         res.status(200).json({
             message: 'User registered successfully',
-            hashedPassword: hashedPassword 
+            hashedPassword: hashedPassword
         });
     });
 });
@@ -86,15 +86,11 @@ Router.post("/check-credentials", (req, res) => {
     });
 });
 
-
-// GET ---- > All Users with Service and Function
-Router.get("/allUsers", (req, res) => {
+Router.get("/all-users", (req, res) => {
     const sql = `
-    SELECT U.Nom, U.Prenom, U.Date_de_naissance, U.Telephone, U.Adresse_Mail AS "Email", S.NomService AS "Service", F.Nom_Fonction AS "Fonction", E.NomComerciale AS "Entreprise"
-    FROM Utilisateur U 
-    LEFT JOIN Service S ON U.ID_Utilisateur = S.id_service 
-    LEFT JOIN Fonction F ON U.ID_Utilisateur = F.id_fonction
-    LEFT JOIN Entreprise E ON U.ID_Utilisateur = E.ID_entreprise
+        SELECT U.Id_Utilisateur, U.Nom, U.Prenom, U.Email, U.Type, E.Nom_marque, E.Siret, E.Siren, E.Adresse, E.Ville, E.CP, E.Pays
+        FROM utilisateurs U
+        JOIN entite E ON U.Id_Utilisateur = E.Id_Utilisateur;
     `;
 
     db.query(sql, (err, rows) => {
@@ -107,17 +103,78 @@ Router.get("/allUsers", (req, res) => {
     });
 });
 
-// GET ---- > Specific User with Service and Function 
-Router.get("/InfoUser/:id", (req, res) => {
+Router.get("/info-user/:id", (req, res) => {
     const userId = req.params.id;
-    console.log("userId", userId);
+    // console.log("userId", userId);
 
     const sql = `
-    SELECT U.Nom, U.Prenom, U.Date_de_naissance, U.Telephone, U.Adresse_Mail AS "Email", S.NomService AS "Service", F.Nom_Fonction AS "Fonction", E.NomComerciale AS "Entreprise"
-    FROM utilisateurq U 
-    LEFT JOIN Service S ON U.ID_Utilisateur = S.id_service 
-    LEFT JOIN Fonction F ON U.ID_Utilisateur = F.id_fonction
-    LEFT JOIN Entreprise E ON U.ID_Utilisateur = E.ID_entreprise
+        SELECT U.Id_Utilisateur, U.Nom, U.Prenom, U.Email, U.Type, E.Nom_marque, E.Siret, E.Siren, E.Adresse, E.Ville, E.CP, E.Pays
+        FROM utilisateurs U
+        JOIN entite E ON U.Id_Utilisateur = E.Id_Utilisateur
+        WHERE U.Id_Utilisateur = ?;
+    `;
+
+    db.query(sql, [userId], (err, rows) => {
+        if (err) {
+            console.error('Error executing SQL query:', err);
+            res.status(500).json({ error: 'An error occurred while fetching data' });
+        } else {
+            res.json(rows);
+        }
+    });
+});
+
+Router.get("/all-site-users", (req, res) => {
+    const sql = `
+        SELECT 
+	U.Id_Utilisateur,
+    U.Nom, 
+    U.Prenom, 
+    E.id_entite,
+    E.Nom_marque,
+    S.id_site,
+    S.Nom AS Nom_Site,
+    S.Ville,
+    S.CP
+    FROM 
+        utilisateurs U
+    JOIN 
+        entite E ON U.Id_Utilisateur = E.Id_Utilisateur
+    JOIN 
+        site S ON U.Id_Utilisateur = S.Id_Utilisateur;
+    `;
+
+    db.query(sql, (err, rows) => {
+        if (err) {
+            console.error('Error executing SQL query:', err);
+            res.status(500).json({ error: 'An error occurred while fetching data' });
+        } else {
+            res.json(rows);
+        }
+    });
+});
+
+Router.get("/site-user/:id", (req, res) => {
+    const userId = req.params.id;
+    // console.log("userId", userId);
+
+    const sql = `
+       SELECT 
+	U.Id_Utilisateur,
+    U.Nom, 
+    U.Prenom, 
+    E.id_entite,
+    E.Nom_marque,
+    S.id_site,
+    S.Nom AS Nom_Site,
+    S.Ville,
+    S.CP
+    FROM 
+        utilisateurs U
+    JOIN 
+        entite E ON U.Id_Utilisateur = E.Id_Utilisateur
+    JOIN 
+        site S ON U.Id_Utilisateur = S.Id_Utilisateur
     WHERE U.Id_Utilisateur = ?;
     `;
 
@@ -131,17 +188,14 @@ Router.get("/InfoUser/:id", (req, res) => {
     });
 });
 
-
-// GET ---- > Specific Appointment for a User
-Router.get("/AllAppointments/:id", (req, res) => {
+Router.get("/interventions-user/:id", (req, res) => {
 
     const userId = req.params.id;
-    console.log("userId", userId);
+    // console.log("userId", userId);
 
     const sql = `
-      SELECT D.* 
-      FROM Demandeur D 
-      WHERE D.ID_Utilisateur = ?;
+        SELECT * FROM interventions I
+        WHERE I.Id_Utilisateur = ?;
     `;
 
     db.query(sql, [userId], (err, rows) => {
@@ -154,17 +208,36 @@ Router.get("/AllAppointments/:id", (req, res) => {
     });
 });
 
-
-// GET ---- > Specific Incident Report for a User
-Router.get("/incident-report/:id", (req, res) => {
+Router.get("/vaches-user/:id", (req, res) => {
 
     const userId = req.params.id;
-    console.log("userId", userId);
+    // console.log("userId", userId);
 
     const sql = `
-    SELECT F.Anonyme AS "Declaration anonyme", F.Date_heure AS "Date/Heure demande", F.Lieu_incident "Lieu incident", F.description_incident AS "Description incident", F.Confidentialité AS "Communication interne autorisée", F.EstVictime
-    FROM Formulaire_de_demande F 
-    WHERE F.ID_Utilisateur = ?;
+    SELECT 
+        U.Id_Utilisateur,
+        U.Nom AS Nom_Utilisateur,
+        U.Prenom AS Prenom_Utilisateur,
+        E.id_entite,
+        E.Nom_marque,
+        S.id_site,
+        S.Nom AS Nom_Site,
+        S.Ville,
+        S.CP,
+        V.id_vache,
+        V.Nom_vache,
+        V.Num_etiquettes_auriculaires,
+        V.Etat,
+        V.Note_interne
+        FROM 
+            utilisateurs U
+        JOIN 
+            entite E ON U.Id_Utilisateur = E.Id_Utilisateur
+        JOIN 
+            site S ON U.Id_Utilisateur = S.Id_Utilisateur
+        JOIN 
+            vaches V ON E.id_entite = V.id_entite AND S.id_site = V.id_site
+        WHERE U.Id_Utilisateur = ?;
     `;
 
     db.query(sql, [userId], (err, rows) => {
