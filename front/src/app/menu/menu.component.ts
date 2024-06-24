@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FORMATIONS } from '../model/datatable';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-menu',
