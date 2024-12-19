@@ -73,7 +73,7 @@ Router.post("/check-credentials", (req, res) => {
                         res.status(200).json({ message: 'User credentials are correct', token });
                     } else {
                         // Incorrect password
-                        console.log('Incorrect password');
+                        console.log('Incorrect password : ' + password);
                         res.status(401).json({ error: 'Incorrect password' });
                     }
                 });
