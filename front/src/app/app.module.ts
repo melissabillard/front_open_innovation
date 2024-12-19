@@ -38,6 +38,7 @@ import { FormationComponent } from './formation/formation.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CameraComponent } from './camera/camera.component';
+import { SupportComponent } from './support/support.component';
 
 import { TokenService } from './token.service';
 
@@ -52,7 +53,8 @@ import { TokenService } from './token.service';
     FormationComponent,
     QuizComponent,
     NavbarComponent,
-    CameraComponent
+    CameraComponent,
+    SupportComponent
   ],
   imports: [
     BrowserModule,
