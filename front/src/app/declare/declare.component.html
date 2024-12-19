@@ -2,34 +2,13 @@
   <div id="declareEvent">
     <div *ngIf="eventForm" class="form-container">
       <div class="title">Support</div>
-      <form [formGroup]="eventForm" (submit)="submitForm()">
-        <div class="form-row">
-          <mat-slide-toggle formControlName="Anonyme">Anonyme</mat-slide-toggle>
-          <mat-checkbox formControlName="EstVictime">Je suis une victime</mat-checkbox>
-          <mat-checkbox formControlName="EstTemoin">Je suis un témoin</mat-checkbox>
-        </div>
-        <div class="form-row">
-          <mat-form-field appearance="outline">
-            <mat-label>Date de l'événement</mat-label>
-            <input matInput [matDatepicker]="eventDatepicker" formControlName="Date_heure" placeholder="Sélectionnez une date">
-            <mat-datepicker-toggle matSuffix [for]="eventDatepicker"></mat-datepicker-toggle>
-            <mat-datepicker #eventDatepicker></mat-datepicker>
-          </mat-form-field>
-        </div>
-        <div class="form-row">
-          <mat-form-field appearance="outline">
-            <mat-label>Lieu de l'événement</mat-label>
-            <input matInput formControlName="Lieu_incident" placeholder="Entrez le lieu">
-          </mat-form-field>
-        </div>
-        <div class="form-row">
-          <mat-form-field appearance="outline">
-            <mat-label>Détails de l'événement</mat-label>
-            <textarea matInput formControlName="description_incident" placeholder="Entrez les détails"></textarea>
-          </mat-form-field>
-        </div>
-        <button mat-raised-button color="primary" type="submit">Valider</button>
-      </form>
+      <a routerLink="/support" class="form-button">
+          <img src="https://via.placeholder.com/40" alt="Logo">
+          <div class="text-container" >
+              <p class="title">Créer une requête</p>
+              <p class="description">Déclarez un dysfonctionnement ou faire part d'un besoin</p>
+          </div>
+        </a>
     </div>
   </div>
 </app-navbar>

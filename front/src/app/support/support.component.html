@@ -1,0 +1,72 @@
+<!-- <app-navbar> -->
+  <div id="declareEvent">
+    <div  class="form-container">
+      <div class="title">Support</div>
+      <form>
+        <!-- Ligne 1 : Objet à entrée libre -->
+    <label for="objet">Objet :</label>
+    <input type="text" id="objet" name="objet" placeholder="Saisissez l'objet de la requête" required>
+
+    <!-- Ligne 2 : Motif de requête et type -->
+    <label for="motif">Motif de Requête :</label>
+    <select id="motif" name="motif" required>
+        <option value="">-- Choisissez un motif --</option>
+        <option value="motif1">Motif 1</option>
+        <option value="motif2">Motif 2</option>
+        <option value="motif3">Motif 3</option>
+        <option value="motif4">Motif 4</option>
+        <option value="motif5">Motif 5</option>
+    </select>
+
+    <label for="type">Type :</label>
+    <select id="type" name="type" required>
+        <option value="">-- Choisissez un type --</option>
+        <option value="type1">Type 1</option>
+        <option value="type2">Type 2</option>
+        <option value="type3">Type 3</option>
+        <option value="type4">Type 4</option>
+        <option value="type5">Type 5</option>
+    </select>
+
+    <!-- Ligne 3 : Entité avec recherche -->
+    <label for="entite">Entité :</label>
+    <input type="text" id="entite" name="entite" placeholder="Rechercher une entité..." list="entites" required>
+    <datalist id="entites">
+        <option value="Entité 1">
+        <option value="Entité 2">
+        <option value="Entité 3">
+        <option value="Entité 4">
+        <option value="Entité 5">
+    </datalist>
+
+    <label for="navigateur">Navigateur :</label>
+    <select id="navigateur" name="navigateur" required>
+        <option value="">-- Choisissez un navigateur --</option>
+        <option value="chrome">Google Chrome</option>
+        <option value="firefox">Mozilla Firefox</option>
+        <option value="safari">Safari</option>
+        <option value="edge">Microsoft Edge</option>
+        <option value="opera">Opera</option>
+    </select>
+
+    <!-- Ligne 4 : Description -->
+    <label for="description">Description de la Requête :</label>
+    <textarea id="description" name="description" placeholder="Décrivez votre requête ici..." required></textarea>
+
+    <!-- Ligne 5 : Protection des données -->
+    <label>
+        <input type="checkbox" id="protection" name="protection" required>
+        J'accepte les conditions relatives à la protection des données.
+    </label>
+
+    <!-- Ligne 6 : Joindre des fichiers -->
+    <label for="fichier">Joindre des fichiers :</label>
+    <input type="file" id="fichier" name="fichier">
+
+    <!-- Ligne 7 : Bouton de soumission -->
+    <button type="submit">Soumettre</button>
+        
+      </form>
+    </div>
+  </div>
+<!-- </app-navbar> -->
