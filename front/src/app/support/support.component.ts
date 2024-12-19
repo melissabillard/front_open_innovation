@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TokenService } from '../token.service';
 import { HttpClient } from '@angular/common/http';
 
@@ -10,61 +10,45 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SupportComponent implements OnInit {
   eventForm!: FormGroup;
-  decodedToken: any;
 
-  constructor(private fb: FormBuilder, private tokenService: TokenService, private httpClient: HttpClient) {}
+  constructor(private fb: FormBuilder) {}
 
+  
   ngOnInit(): void {
-    this.decodedToken = this.tokenService.getDecodedToken();
-
+    // Initialisation du formulaire avec validation
     this.eventForm = this.fb.group({
-      Anonyme: [false],
-      EstVictime: [false],
-      EstTemoin: [false],
-      Lieu_incident: [''],
-      description_incident: [''], 
-      Date_heure: [new Date()]
+      objet: ['', Validators.required],
+      motif: ['', Validators.required],
+      type: ['', Validators.required],
+      entite: ['', Validators.required],
+      navigateur: ['', Validators.required],
+      description: ['', Validators.required],
+      protection: [false, Validators.requiredTrue], // Protection des données
+      fichier: [null] // Fichier joint (optionnel)
     });
   }
-
-  submitForm() {
-    if (this.eventForm && this.eventForm.valid) {
-      const formData = this.eventForm.value;
-  
-      const postData = {
-        Anonyme: formData.Anonyme,
-        Date_heure: this.formatDate(new Date(formData.Date_heure)),
-        Lieu_incident: formData.Lieu_incident,
-        description_incident: formData.description_incident,
-        Confidentialité: formData.Anonyme,
-        EstVictime: formData.EstVictime,
-        ID_Utilisateur: this.decodedToken.id
-      };
-
-    console.log(postData, "POSTDATA")
-  
-      // Effectuez la requête POST
-      this.httpClient.post('https://safeproethics.fr/api/add-incident-report', postData).subscribe(
-        (response) => {
-          console.log('Réponse de l\'API :', response);
-          // Gérez la réponse de l'API si nécessaire
-        },
-        (error) => {
-          console.error('Erreur de la requête API :', error);
-          // Gérez l'erreur de la requête si nécessaire
-        }
-      );
+  onClickConfirmData() {
+    if (this.eventForm.valid) {
+      const data = this.eventForm.value
+      /// envoyer en base la demande de dispo avec l'id de la person choisis
     }
   }
+  submitForm(event: Event) {
+    event.preventDefault(); // Empêche le rechargement de la page
+  const formData = this.eventForm.value;
 
-  formatDate(date: Date): string {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    const hours = String(date.getHours()).padStart(2, '0');
-    const minutes = String(date.getMinutes()).padStart(2, '0');
-    const seconds = String(date.getSeconds()).padStart(2, '0');
-    return `${year}-${month}-${day}` + ' ' +  `${hours}:${minutes}:${seconds}`;
-  }
+  console.log('Données soumises :', formData);
   
+    if (this.eventForm.valid) {
+      
+
+      // Réinitialiser le formulaire après soumission
+      this.eventForm.reset();
+
+      // Réinitialiser la case à cocher pour "protection"
+      this.eventForm.patchValue({ protection: false });
+    } else {
+      console.warn('Le formulaire est invalide. Veuillez vérifier les champs.');
+    }
+  }
 }
