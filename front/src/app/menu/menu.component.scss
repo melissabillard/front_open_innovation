@@ -80,10 +80,15 @@
                     height: 50%;
                 }
 
-                // .btn-action {
-                //     margin: 20px 0 25px 0;
-                //     width: 50%;
-                // }
+                .btn-action {
+                    margin: 20px 0 25px 0;
+                    width: 50%;
+                    background-color: #85c536;
+
+                    .mat-mdc-raised-button.mat-primary{
+                        background-color: red;
+                    }
+                }
             }
         }
 

@@ -58,6 +58,7 @@ import { TokenService } from './token.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule, // <-- Ajoutez cette ligne
     AppRoutingModule,
     HttpClientModule,
     MatCardModule,
