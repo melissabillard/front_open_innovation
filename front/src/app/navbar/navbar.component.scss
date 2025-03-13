@@ -15,21 +15,23 @@
     .sidenav {
         display: flex;
         flex-direction: column;
-        background-color: #1565c0;
+        background-color: #7ED957;
         width: 15vw;
 
 
         .logo {
             height: 15vh;
+            margin-bottom: 10rem;
             display: flex;
             justify-content: center;
 
 
             a {
                 img {
-                    margin: 1em 0;
+                    padding: 1rem;
                     width: 100%;
-                    height: 80%;
+                    justify-content: center;
+                    display: flex;
                 }
 
             }
@@ -37,7 +39,7 @@
         }
 
         .container-item {
-            height: 85vh;
+            height: 65vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -47,9 +49,13 @@
             }
 
             .List-item-active {
-                border-left: white 4px solid;
-
+                border-left: 4px solid #ffffff; 
+                background: linear-gradient(90deg, #4CAF50 0%, #2E8B57 100%); 
+                color: white !important;
+                box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2); 
+                transition: all 0.3s ease-in-out;
             }
+            
 
             .mat-icon {
                 margin-right: 20px;

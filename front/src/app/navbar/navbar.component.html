@@ -11,20 +11,25 @@
 
             <div class="container-item">
                 <mat-nav-list>
-                    <a mat-list-item routerLinkActive="List-item-active" (click)="displaySubMenu()">
+                    <!-- <a mat-list-item  routerLinkActive="List-item-active" (click)="displaySubMenu()">
                         <mat-icon matListIcon>question_mark</mat-icon>
                         <span>S'informer</span>
-                    </a>
-                    <mat-nav-list *ngIf="openSubMenu" class="subMenu">
-                        <a mat-list-item routerLink="/formation">
+                    </a> -->
+                    <!-- <mat-nav-list *ngIf="openSubMenu" class="subMenu">
+                        <a mat-list-item routerLink="/formation" routerLinkActive="List-item-active">
                             <mat-icon matListIcon>book</mat-icon>
                             <span>Ressources</span>
                         </a>
-                        <!-- <a mat-list-item routerLink="/game">
+                        <a mat-list-item routerLink="/game">
                             <mat-icon matListIcon>sports_esports</mat-icon>
                             <span>Test Ethique</span>
-                        </a> -->
-                    </mat-nav-list>
+                        </a>
+                    </mat-nav-list> -->
+                        <a mat-list-item  routerLink="/formation" routerLinkActive="List-item-active">
+                            <mat-icon matListIcon>book</mat-icon>
+                            <span>Ressources</span>
+                        </a>
+          
                     <a mat-list-item routerLink="/camera" routerLinkActive="List-item-active">
                         <mat-icon matListIcon>camera</mat-icon>
                         <span>Vidéo surveillance</span>
