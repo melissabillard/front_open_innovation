@@ -32,10 +32,10 @@
 1. Ouvrez un terminal dans le dossier **`/back`**.
 2. Installez les dépendances :
     ```bash
-   npm install ```
+   npm install
 3. Lancez le serveur Express :
    ```bash
-   npm start ```
+   npm start 
 
 ⚠️ Assurez-vous que WAMP et la base de données sont actifs avant de lancer le back-end, sinon les connexions échoueront.
 
