@@ -40,34 +40,51 @@
 ⚠️ Assurez-vous que WAMP et la base de données sont actifs avant de lancer le back-end, sinon les connexions échoueront.
 
 ## 3. Front-end (Angular)
+
 Ouvrez un terminal dans le dossier **`/front`**.
 
 1. Installez les dépendances :
-```bash
+
+   ```bash
    npm install
+   ```
 
 2. Lancez le serveur Angular :
-  ```bash
-   npm start 
 
-3. Accédez à l’application via votre navigateur à l’adresse :
-**`http://localhost:4200/`**
+   ```bash
+   npm start
+   ```
+
+3. Accédez à l’application via votre navigateur à l’adresse :  
+   **http://localhost:4200/**
 
 4. Navigation
 
 | URL / Route             | Fonctionnalité / Utilité                          |
 |-------------------------|---------------------------------------------------|
 | `/login`                | Page de connexion des utilisateurs                |
+| `/dashboard`            | Tableau de bord de l’utilisateur                  |
+| `/profile`              | Gestion du profil utilisateur                     |
+| `/admin/users`          | Gestion des utilisateurs (admin uniquement)       |
+| `/exploitations`        | Liste des exploitations agricoles                 |
+| `/exploitations/:id`    | Détail d'une exploitation                          |
+| `/capteurs`             | Liste des capteurs installés                      |
+| `/capteurs/:id`         | Détail d’un capteur (valeurs, statut, etc.)       |
 |                         |                                                   |
 |                         |                                                   |
-|                         |                                                   |
-|                         |                                                   |
+
+---
 
 ## 💡 Astuce
+
 Si le site ne fonctionne pas, vérifiez que :
 
-- WAMP est lancé
-- La base de données est bien importée
-- Les serveurs back et front sont démarrés
+- WAMP est lancé  
+- La base de données est bien importée  
+- Les serveurs **back** et **front** sont démarrés  
+
+---
 
 ## 4. Caméra
+
+(Section à compléter selon l'intégration et le fonctionnement des caméras dans votre application)
