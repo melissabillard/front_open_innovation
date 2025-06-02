@@ -37,24 +37,55 @@ export class LoginComponent implements OnInit {
     };
   }
 
+  // onSubmitForm() {
+  //   this.errorMessage = [];
+  //   if (this.loginForm.valid) {
+  //     const data = this.getFormData(this.loginForm.value);
+  //     this.httpClient.post('http://localhost:9999/api/user/check-credentials', data).subscribe(
+  //     (response: any) => {
+  //       console.log('Réponse de l\'API :', response);
+  //       this.tokenService.decodeToken(response.token);
+  //       this.route.navigate(['menu']);
+  //     },
+  //     (error) => {
+  //       console.error('Erreur de la requête API :', error);
+  //     }
+  //     );
+  //   } else {
+  //     this.getFormErrors(this.loginForm);
+  //   }
+  // }
+
   onSubmitForm() {
     this.errorMessage = [];
     if (this.loginForm.valid) {
       const data = this.getFormData(this.loginForm.value);
       this.httpClient.post('http://localhost:9999/api/user/check-credentials', data).subscribe(
-      (response: any) => {
-        console.log('Réponse de l\'API :', response);
-        this.tokenService.decodeToken(response.token);
-        this.route.navigate(['menu']);
-      },
-      (error) => {
-        console.error('Erreur de la requête API :', error);
-      }
+        (response: any) => {
+          console.log('Réponse de l\'API :', response);
+          this.tokenService.decodeToken(response.token);
+          this.route.navigate(['menu']);
+        },
+        (error) => {
+          console.error('Erreur de la requête API :', error);
+  
+          // Exemple d’analyse selon la réponse backend
+          if (error.status === 401) {
+            // Authentification échouée
+            this.errorMessage.password = "Mot de passe incorrect.";
+          } else if (error.status === 404) {
+            this.errorMessage.email = "Email introuvable.";
+          } else {
+            // Message générique
+            this.errorMessage.password = "Erreur serveur ou réseau.";
+          }
+        }
       );
     } else {
       this.getFormErrors(this.loginForm);
     }
   }
+  
 
   getFormErrors(form: FormGroup) {
     for (const controlName in form.controls) {
