@@ -40,7 +40,7 @@
 ⚠️ Assurez-vous que WAMP et la base de données sont actifs avant de lancer le back-end, sinon les connexions échoueront.
 
 ## 3. Front-end (Angular)
-Ouvrez un terminal dans le dossier /front.
+Ouvrez un terminal dans le dossier **`/front`**.
 
 1. Installez les dépendances :
 ```bash
