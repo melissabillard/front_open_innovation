@@ -44,15 +44,14 @@ Ouvrez un terminal dans le dossier **`/front`**.
 
 1. Installez les dépendances :
 ```bash
-npm install
+   npm install
 
 2. Lancez le serveur Angular :
-```bash
-npm start
+  ```bash
+   npm start 
 
 3. Accédez à l’application via votre navigateur à l’adresse :
-```bash
-http://localhost:4200/
+**`http://localhost:4200/`**
 
 4. Navigation
 
@@ -70,3 +69,5 @@ Si le site ne fonctionne pas, vérifiez que :
 - WAMP est lancé
 - La base de données est bien importée
 - Les serveurs back et front sont démarrés
+
+## 4. Caméra
