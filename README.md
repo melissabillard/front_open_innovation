@@ -6,7 +6,7 @@
 - Lola BRACCIALE-COMBAS
 - Fatima-zhara BOUHASSOUN 
 - Nemo LENGAGNE
-- (Charlie PETRE) *présent uniqument  la 1er année*
+- (Charlie PETRE) *présent uniquement  la 1er année*
 
 ## ⚙️ Prérequis
 
