@@ -63,13 +63,6 @@ Ouvrez un terminal dans le dossier **`/front`**.
 | URL / Route             | Fonctionnalité / Utilité                          |
 |-------------------------|---------------------------------------------------|
 | `/login`                | Page de connexion des utilisateurs                |
-| `/dashboard`            | Tableau de bord de l’utilisateur                  |
-| `/profile`              | Gestion du profil utilisateur                     |
-| `/admin/users`          | Gestion des utilisateurs (admin uniquement)       |
-| `/exploitations`        | Liste des exploitations agricoles                 |
-| `/exploitations/:id`    | Détail d'une exploitation                          |
-| `/capteurs`             | Liste des capteurs installés                      |
-| `/capteurs/:id`         | Détail d’un capteur (valeurs, statut, etc.)       |
 |                         |                                                   |
 |                         |                                                   |
 
@@ -87,4 +80,3 @@ Si le site ne fonctionne pas, vérifiez que :
 
 ## 4. Caméra
 
-(Section à compléter selon l'intégration et le fonctionnement des caméras dans votre application)
