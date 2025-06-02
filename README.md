@@ -25,7 +25,7 @@
 | Rôle        | Email                      | Mot de passe  |
 |-------------|----------------------------|---------------|
 | Administrateur | `admin@example.com`        | `admin1450`    |
-| Utilisateur métier | `agriculteur1@example.com` | `johnny1450`   |
+| Utilisateur métier | `agriculteur1@example.com` | `johnny1221`   |
 
 ## 🔙 2. Back-end (Express.js)
 
