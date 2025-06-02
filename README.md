@@ -14,7 +14,7 @@
 - WAMP (ou tout autre serveur local pour MySQL)
 - Angular CLI (`npm install -g @angular/cli`)
 
-## 🗄️ 1. Base de données (WAMP)
+## 1. Base de données (WAMP)
 
 1. Lancez WAMP (ou équivalent).
 2. Créez une base de données nommée **`agritechvision`**.
@@ -27,7 +27,7 @@
 | Administrateur | `admin@example.com`        | `admin1450`    |
 | Utilisateur métier | `agriculteur1@example.com` | `johnny1221`   |
 
-## 🔙 2. Back-end (Express.js)
+## 2. Back-end (Express.js)
 
 1. Ouvrez un terminal dans le dossier **`/back`**.
 2. Installez les dépendances :
@@ -39,38 +39,34 @@
 
 ⚠️ Assurez-vous que WAMP et la base de données sont actifs avant de lancer le back-end, sinon les connexions échoueront.
 
-🌐 3. Front-end (Angular)
+## 3. Front-end (Angular)
 Ouvrez un terminal dans le dossier /front.
 
-Installez les dépendances :
-
-bash
-Copier
-Modifier
+1. Installez les dépendances :
+```bash
 npm install
-Lancez le serveur Angular :
 
-bash
-Copier
-Modifier
+2. Lancez le serveur Angular :
+```bash
 npm start
-Accédez à l’application via votre navigateur à l’adresse :
-👉 http://localhost:4200/
 
-✅ Navigation
-Une fois toutes les couches démarrées :
+3. Accédez à l’application via votre navigateur à l’adresse :
+```bash
+http://localhost:4200/
 
-Accédez au site via votre navigateur.
+4. Navigation
 
-Connectez-vous avec l’un des comptes fournis ci-dessus.
+| URL / Route             | Fonctionnalité / Utilité                          |
+|-------------------------|---------------------------------------------------|
+| `/login`                | Page de connexion des utilisateurs                |
+|                         |                                                   |
+|                         |                                                   |
+|                         |                                                   |
+|                         |                                                   |
 
-Profitez des fonctionnalités de gestion proposées par Agritech Vision !
-
-💡 Astuce
+## 💡 Astuce
 Si le site ne fonctionne pas, vérifiez que :
 
-WAMP est lancé
-
-La base de données est bien importée
-
-Les serveurs back et front sont démarrés
+- WAMP est lancé
+- La base de données est bien importée
+- Les serveurs back et front sont démarrés
