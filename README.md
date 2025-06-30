@@ -63,7 +63,7 @@ Ouvrez un terminal dans le dossier **`/front`**.
 | URL / Route             | Fonctionnalité / Utilité                          |
 |-------------------------|---------------------------------------------------|
 | `/login`                | Page de connexion des utilisateurs                |
-|                         |                                                   |
+| ....                    |                                                   |
 |                         |                                                   |
 
 ---
@@ -79,4 +79,4 @@ Si le site ne fonctionne pas, vérifiez que :
 ---
 
 ## 4. Caméra
-
+Pour la partie caméra, il faut s’assurer que l’URL d’accès est à jour, celle-ci pouvant fluctuer si elle est modifiée par le développeur en charge de l’administration de la caméra.
