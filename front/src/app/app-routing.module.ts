@@ -12,6 +12,7 @@ import { CameraComponent } from './camera/camera.component';
 import { SupportComponent } from './support/support.component';
 import { ProfileComponent } from './profile/profile.component';
 import { InfoVacheComponent } from './info-vache/info-vache.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'camera', component: CameraComponent },
   { path: 'support', component: SupportComponent },
   { path: 'profile', component: ProfileComponent },
-   { path: 'infoVache', component: InfoVacheComponent },
+  { path: 'infoVache', component: InfoVacheComponent },
+  {path : 'admin', component : AdminUsersComponent}
 ];
 
 

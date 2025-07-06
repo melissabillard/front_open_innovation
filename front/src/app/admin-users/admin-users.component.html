@@ -1,0 +1,45 @@
+<app-navbar>
+  <div class="admin-container">
+    <div class="admin-header">
+      <h2>Gestion des utilisateurs</h2>
+      <button (click)="ajouterUtilisateur()">+ Ajouter un utilisateur</button>
+    </div>
+
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of utilisateurs">
+          <td>{{ user.nom }}</td>
+          <td>{{ user.prenom }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.telephone }}</td>
+          <td>
+            <button (click)="modifierUtilisateur(user)">Modifier</button>
+            <button class="danger" (click)="supprimerUtilisateur(user.id)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="form-section" *ngIf="utilisateurFormVisible">
+      <h3>{{ modeEdition ? 'Modifier un utilisateur' : 'Créer un utilisateur' }}</h3>
+      <form (ngSubmit)="enregistrerUtilisateur()">
+        <input type="text" [(ngModel)]="utilisateurForm.nom" name="nom" placeholder="Nom" required>
+        <input type="text" [(ngModel)]="utilisateurForm.prenom" name="prenom" placeholder="Prénom" required>
+        <input type="email" [(ngModel)]="utilisateurForm.email" name="email" placeholder="Email" required>
+        <input type="text" [(ngModel)]="utilisateurForm.telephone" name="telephone" placeholder="Téléphone">
+        <input type="password" [(ngModel)]="utilisateurForm.password" name="password" placeholder="Mot de passe" required>
+        <button type="submit">Enregistrer</button>
+        <button type="button" class="cancel" (click)="annulerEdition()">Annuler</button>
+      </form>
+    </div>
+  </div>
+</app-navbar>

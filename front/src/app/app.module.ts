@@ -43,6 +43,7 @@ import { SupportComponent } from './support/support.component';
 import { TokenService } from './token.service';
 import { ProfileComponent } from './profile/profile.component';
 import { InfoVacheComponent } from './info-vache/info-vache.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { InfoVacheComponent } from './info-vache/info-vache.component';
     CameraComponent,
     SupportComponent,
     ProfileComponent,
-    InfoVacheComponent
+    InfoVacheComponent,
+    AdminUsersComponent
   ],
   imports: [
     BrowserModule,
