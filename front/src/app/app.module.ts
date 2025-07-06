@@ -41,6 +41,8 @@ import { CameraComponent } from './camera/camera.component';
 import { SupportComponent } from './support/support.component';
 
 import { TokenService } from './token.service';
+import { ProfileComponent } from './profile/profile.component';
+import { InfoVacheComponent } from './info-vache/info-vache.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { TokenService } from './token.service';
     QuizComponent,
     NavbarComponent,
     CameraComponent,
-    SupportComponent
+    SupportComponent,
+    ProfileComponent,
+    InfoVacheComponent
   ],
   imports: [
     BrowserModule,

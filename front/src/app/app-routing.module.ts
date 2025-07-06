@@ -10,6 +10,8 @@ import { FormationComponent } from './formation/formation.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { CameraComponent } from './camera/camera.component';
 import { SupportComponent } from './support/support.component';
+import { ProfileComponent } from './profile/profile.component';
+import { InfoVacheComponent } from './info-vache/info-vache.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'game', component: QuizComponent },
   { path: 'camera', component: CameraComponent },
   { path: 'support', component: SupportComponent },
+  { path: 'profile', component: ProfileComponent },
+   { path: 'infoVache', component: InfoVacheComponent },
 ];
 
 

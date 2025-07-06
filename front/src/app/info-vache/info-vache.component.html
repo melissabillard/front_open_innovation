@@ -1,0 +1,30 @@
+<app-navbar>
+<div class="container">
+  <div class="search-bar">
+    <input type="text" placeholder="Rechercher une vache par ID">
+  </div>
+
+  <div class="vache-header">
+    <img src="assets/images/vache.jpg" alt="Vache">
+    <h2>La Vache</h2>
+  </div>
+
+  <h3>Informations du troupeau</h3>
+  <table class="vache-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Âge</th>
+        <th>Date de naissance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of troupeau">
+        <td>{{ v.id }}</td>
+        <td>{{ v.age }}</td>
+        <td>{{ v.naissance }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</app-navbar>
