@@ -1,17 +1,42 @@
+
+
 <app-navbar>
- 
-    <div class="container">
-  <h2>Informations personnelles</h2>
-  <div class="card">
-    <label>Nom :</label>
-    <p>{{ utilisateur.nom }}</p>
+  <div class="profile-container">
+    <div class="profile-card">
+      <div class="profile-avatar">
+        <img src="assets\image\user.jpeg" alt="Avatar utilisateur">
+        <h2>{{ utilisateur.nom }} {{ utilisateur.prenom }}</h2>
+      </div>
 
-    <label>Email :</label>
-    <p>{{ utilisateur.email }}</p>
+      <div class="profile-edit-fields">
+        <label>Nom :</label>
+        <input type="text" [(ngModel)]="utilisateur.nom" placeholder="Entrez votre nom">
 
-    <label>Téléphone :</label>
-    <p>{{ utilisateur.telephone }}</p>
+        <label>Prénom :</label>
+        <input type="text" [(ngModel)]="utilisateur.prenom" placeholder="Entrez votre prénom">
+      </div>
+
+      <div class="profile-info">
+        <p><mat-icon>email</mat-icon> {{ utilisateur.email }}</p>
+        <p><mat-icon>phone</mat-icon> {{ utilisateur.telephone }}</p>
+
+        <label for="password"><mat-icon>lock</mat-icon> Nouveau mot de passe</label>
+        <input type="password" id="password" placeholder="********">
+
+        <div class="notifications">
+          <mat-icon>notifications</mat-icon>
+          Notifications :
+          <label class="switch">
+            <input type="checkbox" [(ngModel)]="notificationsActive">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="profile-buttons">
+        <button class="save">Enregistrer</button>
+        <button class="logout">Déconnexion</button>
+      </div>
+    </div>
   </div>
-</div>
-
 </app-navbar>

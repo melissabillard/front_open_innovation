@@ -6,9 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-utilisateur = {
-    nom: 'Jean Dupont',
-    email: 'jean.dupont@email.com',
-    telephone: '+33 6 12 34 56 78'
+ utilisateur = {
+    nom: 'John',
+    prenom: 'Doe',
+    email: 'john.doe@example.com',
+    telephone: '1234567890'
   };
+
+  notificationsActive = true;
 }

@@ -1,30 +1,39 @@
 <app-navbar>
-<div class="container">
-  <div class="search-bar">
-    <input type="text" placeholder="Rechercher une vache par ID">
-  </div>
+  <div class="container">
+    <div class="search-bar">
+          <mat-icon class="search-icon">search</mat-icon>
+          <input type="text" placeholder="Rechercher une vache par ID ou nom" [(ngModel)]="recherche" (input)="filtrerVaches()">
+        </div>
 
-  <div class="vache-header">
-    <img src="assets/images/vache.jpg" alt="Vache">
-    <h2>La Vache</h2>
-  </div>
+    <div class="vache-layout">
+      <div class="vache-list">
+        <h3>Informations du troupeau</h3>
+        <table class="vache-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Âge</th>
+              <th>Date de naissance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let v of vachesFiltrees" (click)="selectionnerVache(v)" [class.selected]="v === vacheSelectionnee">
+              <td>{{ v.id }}</td>
+              <td>{{ v.age }}</td>
+              <td>{{ v.naissance }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-  <h3>Informations du troupeau</h3>
-  <table class="vache-table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Âge</th>
-        <th>Date de naissance</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let v of troupeau">
-        <td>{{ v.id }}</td>
-        <td>{{ v.age }}</td>
-        <td>{{ v.naissance }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+      <div class="vache-details" *ngIf="vacheSelectionnee">
+        <img src="assets/image/image_vache.jpg" alt="Vache sélectionnée">
+        <h2>{{ vacheSelectionnee.nom || 'Vache' }}</h2>
+        <p><strong>ID :</strong> {{ vacheSelectionnee.id }}</p>
+        <p><strong>Âge :</strong> {{ vacheSelectionnee.age }} ans</p>
+        <p><strong>Date de naissance :</strong> {{ vacheSelectionnee.naissance }}</p>
+        <!-- Ajouter plus d'infos si disponibles -->
+      </div>
+    </div>
+  </div>
 </app-navbar>

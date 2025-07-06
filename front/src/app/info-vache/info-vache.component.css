@@ -2,35 +2,15 @@
   padding: 20px;
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
-  margin-left: 260px;
+  /* margin-left: 260px; */
 }
 
 h2, h3 {
-  color: #2e7d32;
+  color: #04244b;
   text-align: center;
 }
 
-.card {
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
-}
-
-.vache-header {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.vache-header img {
-  width: 100px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.search-bar {
+/* .search-bar {
   display: flex;
   justify-content: center;
   margin: 20px 0;
@@ -41,48 +21,93 @@ h2, h3 {
   width: 80%;
   max-width: 400px;
   border-radius: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #d7e0df;
   text-align: center;
   font-size: 16px;
+  background-color: #ffffff;
+} */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #4adaea;
+  border-radius: 25px;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  max-width: 100%;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  padding-left: 10px;
+  background: transparent;
+}
+
+.search-icon {
+  color: #04244b;
+  font-size: 24px;
+}
+.vache-layout {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.vache-list, .vache-details {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.vache-list {
+  flex: 1;
+  min-width: 400px;
+}
+
+.vache-details {
+  max-width: 300px;
+  text-align: center;
+  border: 2px solid #91cb2f;
+}
+
+.vache-details img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 .vache-table {
   width: 100%;
   border-collapse: collapse;
   background-color: white;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .vache-table th, .vache-table td {
-  border: 1px solid #ccc;
+  border: 1px solid #d7e0df;
   padding: 12px;
   text-align: center;
 }
 
 .vache-table th {
-  background-color: #e0f2f1;
+  background-color: #4adaea;
+  color: #04244b;
   font-weight: bold;
 }
 
-.admin-actions button {
-  margin-right: 10px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
+.vache-table tr:hover {
+  background-color: #91cb2f33;
   cursor: pointer;
 }
 
-.admin-actions ul {
-  list-style: none;
-  padding: 0;
-}
-
-.admin-actions li {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+.selected {
+  background-color: #6aaa19 !important;
+  color: #fff;
 }
