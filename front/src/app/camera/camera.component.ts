@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 
 export class CameraComponent {
 
-    updateServo(servo: number, direction: string) {
+    updateServo(servo: string, direction: number) {
         
         console.log(servo + "-" + direction)
 
-        const url = `http:// 192.168.0.94:81/moveServo?dir=${servo}&delta=${direction}`;
+        const url = `http://192.168.0.94:81/moveServo?dir=${servo}&delta=${direction}`;
         fetch(url)
             .then(response => response.text())
             .then(data => console.log(data))

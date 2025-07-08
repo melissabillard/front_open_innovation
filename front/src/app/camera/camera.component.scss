@@ -9,7 +9,7 @@
         background-color: #c2c0c2;
         margin: 1rem 0rem 0rem 5rem;
         width: 60vw;
-        height: 85vh;
+        height: 95vh;
         overflow: auto;
         @include mat.elevation(5);
         border-radius: 5px;
@@ -21,11 +21,11 @@
     }
 
     .cam-wrapper{
-        margin: 5em;
+        margin: 2em;
     }
 
     img {
-        width: 100%;
+        width: 85%;
         height: auto;
         border-radius: 5px;
     }
@@ -34,7 +34,7 @@
         display: flex;
         justify-content: space-evenly;
         gap: 10px; 
-        margin-top: 20px;
+        margin-top: 15px;
 
         button {
             margin: 0 10px; 
