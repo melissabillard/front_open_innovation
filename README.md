@@ -80,7 +80,5 @@ Si le site ne fonctionne pas, vérifiez que :
 - La base de données est bien importée  
 - Les serveurs **back** et **front** sont démarrés  
 
----
-
 ## 4. Caméra
 Pour la partie caméra, il faut s’assurer que l’URL d’accès est à jour, celle-ci pouvant fluctuer si elle est modifiée par le développeur en charge de l’administration de la caméra.
