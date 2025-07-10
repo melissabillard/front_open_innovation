@@ -63,10 +63,14 @@ Ouvrez un terminal dans le dossier **`/front`**.
 | URL / Route             | Fonctionnalité / Utilité                          |
 |-------------------------|---------------------------------------------------|
 | `/login`                | Page de connexion des utilisateurs                |
-| ....                    |                                                   |
-|                         |                                                   |
-
----
+| `/menu`                 | Page d'atterisage après connexion                 |
+| `/formation`            | Ressources utiles                                 |
+| `/camera`               | Écran de la caméra                                |
+| `/declare`              | Page de support                                   |
+| `/profile`              | Page du profil de l'utilisateur                   |
+| `/infoVache`            | Page information de l'élévage                     |
+| `/appointment`          | Page de prise de rendez-vous avec un tech         |
+| `/admin`                | Page de gestion des utilisateurs                  |
 
 ## 💡 Astuce
 
@@ -75,8 +79,6 @@ Si le site ne fonctionne pas, vérifiez que :
 - WAMP est lancé  
 - La base de données est bien importée  
 - Les serveurs **back** et **front** sont démarrés  
-
----
 
 ## 4. Caméra
 Pour la partie caméra, il faut s’assurer que l’URL d’accès est à jour, celle-ci pouvant fluctuer si elle est modifiée par le développeur en charge de l’administration de la caméra.
