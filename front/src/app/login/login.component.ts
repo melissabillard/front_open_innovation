@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
             this.errorMessage.email = "Email introuvable.";
           } else {
             // Message générique
-            this.errorMessage.password = "Erreur serveur ou réseau.";
+            this.errorMessage.global = "Erreur de connexion";
           }
         }
       );

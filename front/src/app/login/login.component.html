@@ -1,6 +1,4 @@
 <div class="container">
-
-
     <mat-card class="mat-card">
         <!-- <div class="bg-wrapper"> -->
             <img class="bg" src="../../assets/image/logo-fond-gris.png" alt="">
@@ -15,7 +13,6 @@
                     <mat-error *ngIf="errorMessage.email">{{errorMessage.email}}</mat-error>
                 </mat-form-field>
 
-
                 <!-- champ password -->
                 <mat-form-field appearance="outline">
                     <mat-label>Votre mot de passe</mat-label>
@@ -27,12 +24,15 @@
                     <mat-error *ngIf="errorMessage.password">{{errorMessage.password}}</mat-error>
                 </mat-form-field>
 
+                <div *ngIf="errorMessage.global" class="error-message">
+                    {{ errorMessage.global }}
+                </div>
+
                 <button mat-raised-button class="btn-action">Se connecter</button>
 
             </form>
 
         </mat-card-content>
     </mat-card>
-
 </div>
 <!-- <router-outlet></router-outlet> -->
