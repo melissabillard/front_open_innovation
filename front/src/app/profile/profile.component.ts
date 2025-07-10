@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ProfileComponent {
  utilisateur = {
-    nom: 'John',
-    prenom: 'Doe',
-    email: 'john.doe@example.com',
-    telephone: '1234567890'
+    nom: 'Admin',
+    prenom: 'Admin',
+    email: 'admin@example.com',
+    telephone: '06 50 60 46 35'
   };
 
   notificationsActive = true;

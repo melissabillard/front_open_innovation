@@ -14,18 +14,18 @@
   margin-bottom: 20px;
 }
 
-.admin-header h2 {
+/* .admin-header h2 {
   color: #04244b;
-}
+} */
 
 .admin-header button {
   background-color: #1976d2;
   color: white;
   padding: 10px 20px;
-  border: none;
+  /* border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: bold; */
 }
 
 .admin-table {
@@ -44,10 +44,10 @@
 
 .admin-table th {
   background-color: #91cb2f;
-  color: #04244b;
+  /* color: #04244b; */
 }
 
-.admin-table button {
+/* .admin-table button {
   background-color: #1976d2;
   color: #fff;
   border: none;
@@ -55,10 +55,11 @@
   margin-right: 5px;
   border-radius: 5px;
   cursor: pointer;
-}
+} */
 
 button.danger {
   background-color: #e74c3c;
+  margin-left: 8px;
 }
 
 .form-section {

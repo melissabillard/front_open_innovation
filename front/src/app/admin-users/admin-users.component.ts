@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AdminUsersComponent {
 
     utilisateurs = [
-    { id: 1, nom: 'Jean', prenom: 'Martin', email: 'jean.martin@mail.com', telephone: '0600000000' },
-    { id: 2, nom: 'Sophie', prenom: 'Durand', email: 'sophie.durand@mail.com', telephone: '0611111111' }
+    { id: 1, nom: 'Admin', prenom: 'Admin', email: 'admin@example.com', telephone: '06 50 60 46 35' },
+    { id: 2, nom: 'Cervantes', prenom: 'Johnny', email: 'agriculteur1@example.com', telephone: '07 95 48 10 20' }
   ];
 
   utilisateurFormVisible = false;

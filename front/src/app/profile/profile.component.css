@@ -140,19 +140,19 @@ input:checked + .slider:before {
 button.save {
   background-color: #6aaa19;
   color: white;
-  padding: 10px 25px;
+  /* padding: 10px 25px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: bold; */
 }
 
 button.logout {
   background-color: #d7e0df;
   color: #04244b;
-  padding: 10px 25px;
+  /* padding: 10px 25px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: bold; */
 }
