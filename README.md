@@ -63,10 +63,14 @@ Ouvrez un terminal dans le dossier **`/front`**.
 | URL / Route             | Fonctionnalité / Utilité                          |
 |-------------------------|---------------------------------------------------|
 | `/login`                | Page de connexion des utilisateurs                |
-| ....                    |                                                   |
-|                         |                                                   |
-
----
+| `/menu`                 | Page d'atterisage après connexion                 |
+| `/formation`            | Ressources utiles                                 |
+| `/camera`               | Écran de la caméra                                |
+| `/declare`              | Page de support                                   |
+| `/profile`              | Page du profil de l'utilisateur                   |
+| `/infoVache`            | Page information de l'élévage                     |
+| `/appointment`          | Page de prise de rendez-vous avec un tech         |
+| `/admin`                | Page de gestion des utilisateurs                  |
 
 ## 💡 Astuce
 
