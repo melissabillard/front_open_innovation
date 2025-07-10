@@ -3,7 +3,7 @@
 .title {
     @include mat.elevation(5);
     border-radius: 5px;
-    background-color: #64b5f6;
+    background-color: #91cb2f;
     margin: 1em auto;
     width: 80vw;
     height: 10vh;
@@ -33,13 +33,13 @@
         .appointment {
             height: 30vh;
             flex: 1;
-            background-color: #f14624;
+            background-color: #4685d2 ;
             margin-right: 10px;
             @include mat.elevation(5);
         }
 
         .game {
-            background-color: #85c536;
+            background-color: #d246c7 ;
             height: 30vh;
             flex: 1;
             @include mat.elevation(5);
@@ -62,7 +62,7 @@
         }
 
         .informations {
-            background-color: #981980;
+            background-color: #f44336 ;
             height: 30vh;
             flex: 1;
             margin-right: 10px;
@@ -83,7 +83,7 @@
                 .btn-action {
                     margin: 20px 0 25px 0;
                     width: 50%;
-                    background-color: #85c536;
+                    // background-color: #85c536;
 
                     .mat-mdc-raised-button.mat-primary{
                         background-color: red;
@@ -104,6 +104,7 @@
 
         mat-card-title {
             margin-bottom: 1em;
+            padding: 20px;
         }
     }
 

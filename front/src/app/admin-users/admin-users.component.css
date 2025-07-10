@@ -19,7 +19,7 @@
 }
 
 .admin-header button {
-  background-color: #6aaa19;
+  background-color: #1976d2;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -43,12 +43,12 @@
 }
 
 .admin-table th {
-  background-color: #4adaea;
+  background-color: #91cb2f;
   color: #04244b;
 }
 
 .admin-table button {
-  background-color: #91cb2f;
+  background-color: #1976d2;
   color: #fff;
   border: none;
   padding: 6px 12px;
